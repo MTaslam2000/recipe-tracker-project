@@ -47,13 +47,25 @@ function RecipeCreate() {
             <td>
               <label htmlFor="Cuisine">
                 Cuisine
-                <input name="cuisine" type="text" id="Cuisine" />
+                <input
+                  name="cuisine"
+                  type="text"
+                  id="Cuisine"
+                  onChange={handleChange}
+                  value={formData.cuisine}
+                />
               </label>
             </td>
             <td>
               <label htmlFor="photo">
                 URL
-                <input name="photo" type="url" id="photo" />
+                <input
+                  name="photo"
+                  type="url"
+                  id="photo"
+                  onChange={handleChange}
+                  value={formData.photo}
+                />
               </label>
             </td>
             <td>
@@ -64,6 +76,8 @@ function RecipeCreate() {
                   id="ingredients"
                   rows="2"
                   cols="20"
+                  onChange={handleChange}
+                  value={formData.ingredients}
                 />
               </label>
             </td>
@@ -75,6 +89,8 @@ function RecipeCreate() {
                   id="preparation"
                   rows="2"
                   cols="20"
+                  onChange={handleChange}
+                  value={formData.preparation}
                 />
               </label>
             </td>
