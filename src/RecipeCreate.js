@@ -2,11 +2,28 @@ import React, { useState } from "react";
 
 function RecipeCreate() {
   // TODO: Add the required submit and change handlers
+  const initialFormState = {
+    name: "",
+    cuisine: "",
+    photo: "",
+    ingredients: "",
+    preparation: "",
+  };
 
-  const handleChange = () => {};
+  const [formData, setFormData] = useState({ ...initialFormState });
+  const handleChange = (event) => {
+    const { target } = event;
+    setFormData({
+      ...formData,
+      [target.name]: target.value,
+    });
+    console.log(target.value);
+  };
   // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
   const submitHandler = (event) => {
     event.preventDefault();
+    console.log(formData);
+    setFormData({ ...initialFormState });
   };
 
   // TODO: Add the required input and textarea form elements.
@@ -18,7 +35,13 @@ function RecipeCreate() {
             <td>
               <label htmlFor="name">
                 Name
-                <input name="name" type="text" id="name" />
+                <input
+                  name="name"
+                  type="text"
+                  id="name"
+                  onChange={handleChange}
+                  value={formData.name}
+                />
               </label>
             </td>
             <td>
