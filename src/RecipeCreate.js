@@ -34,43 +34,42 @@ function RecipeCreate() {
           <tr>
             <td>
               <label htmlFor="name">
-                Name
                 <input
                   name="name"
                   type="text"
                   id="name"
                   onChange={handleChange}
                   value={formData.name}
+                  placeholder="Name"
                 />
               </label>
             </td>
             <td>
               <label htmlFor="Cuisine">
-                Cuisine
                 <input
                   name="cuisine"
                   type="text"
                   id="Cuisine"
                   onChange={handleChange}
                   value={formData.cuisine}
+                  placeholder="Cuisine"
                 />
               </label>
             </td>
             <td>
               <label htmlFor="photo">
-                URL
                 <input
                   name="photo"
                   type="url"
                   id="photo"
                   onChange={handleChange}
                   value={formData.photo}
+                  placeholder="Url"
                 />
               </label>
             </td>
             <td>
               <label htmlFor="ingredients">
-                Ingredients
                 <textarea
                   name="ingredients"
                   id="ingredients"
@@ -78,12 +77,12 @@ function RecipeCreate() {
                   cols="20"
                   onChange={handleChange}
                   value={formData.ingredients}
+                  placeholder="Ingredients"
                 />
               </label>
             </td>
             <td>
               <label htmlFor="preparation">
-                preparation
                 <textarea
                   name="preparation"
                   id="preparation"
@@ -91,6 +90,7 @@ function RecipeCreate() {
                   cols="20"
                   onChange={handleChange}
                   value={formData.preparation}
+                  placeholder="Preparation"
                 />
               </label>
             </td>
