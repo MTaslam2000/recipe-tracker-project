@@ -3,9 +3,15 @@ import React, { useState } from "react";
 function RecipeCreate() {
   // TODO: Add the required submit and change handlers
 
+  const handleChange = () => {};
+  // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
+  const submitHandler = (event) => {
+    event.preventDefault();
+  };
+
   // TODO: Add the required input and textarea form elements.
   return (
-    <form name="create">
+    <form name="create" onSubmit={submitHandler}>
       <table>
         <tbody>
           <tr>
