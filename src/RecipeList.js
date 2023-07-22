@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import RecipeData from "./RecipeData.js";
 
 function RecipeList({ recipes }) {
   // console.log("recipes", recipes);
 
-  // TODO: Display the list of recipes using the structure of table that is provided.
+  // TODO: Display the list of recipes using the structure of table that is provided. DONE*
 
   // TODO: Create at least one additional component that is used by this component.
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function RecipeCreate() {
+function RecipeCreate({ addRecipe }) {
   // TODO: Add the required submit and change handlers
   const initialFormState = {
     name: "",
@@ -23,6 +23,7 @@ function RecipeCreate() {
   const submitHandler = (event) => {
     event.preventDefault();
     console.log(formData);
+    addRecipe(formData);
     setFormData({ ...initialFormState });
   };
 
