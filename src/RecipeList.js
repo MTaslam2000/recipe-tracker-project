@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import TableHead from "./TableHead.js";
 
 function RecipeList({ recipes, setRecipes }) {
   // console.log("recipes", recipes);
 
   // TODO: Display the list of recipes using the structure of table that is provided. DONE*
 
-  // TODO: Create at least one additional component that is used by this component.
+  // TODO: Create at least one additional component that is used by this component. DONE*
 
   // TODO: Each recipe row must have a delete button - <button name="delete">Delete</button> - that deletes the post when clicked DONE*
   function deleteRecipe(recipeToDelete) {
@@ -14,32 +15,36 @@ function RecipeList({ recipes, setRecipes }) {
     );
     setRecipes(filteredRecipes);
   }
+  // function setStarred(recipeToStar) {
+  //   setRecipes(
+  //     recipes.map((r, index) =>
+  //       index === recipeToStar ? { ...r, starred: true } : r
+  //     )
+  //   );
+  // }
 
   return (
     <div className="recipe-list">
       <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Cuisine</th>
-            <th>Photo</th>
-            <th>Ingredients</th>
-            <th>Preparation</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
+        <TableHead />
         <tbody>
           {recipes.map((r, index) => (
             <tr key={index}>
               <td>{r.name}</td>
               <td>{r.cuisine}</td>
               <td>
-                <img src={r.photo} />
+                <img src={r.photo} alt="food" />
               </td>
-              <td>{r.ingredients}</td>
-              <td>{r.preparation}</td>
+              <td className="content_td">
+                <p>{r.ingredients}</p>
+              </td>
+              <td className="content_td">
+                <p>{r.preparation}</p>
+              </td>
               <td>
-                <button onClick={() => deleteRecipe(index)}>Delete</button>
+                <button name="delete" onClick={() => deleteRecipe(index)}>
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
